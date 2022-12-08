@@ -1,26 +1,118 @@
-html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #8e7d4d;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.m-t-20 {
+  margin-top: 20px;
 }
 
-* {
-  box-sizing: border-box;
+.m-t-30 {
+  margin-top: 30px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.m-t-50 {
+  margin-top: 50px;
+}
+
+.m-b-10 {
+  margin-bottom: 10px;
+}
+
+.m-b-20 {
+  margin-bottom: 20px;
+}
+
+.m-b-60 {
+  margin-bottom: 60px;
+}
+
+.m-b-50 {
+  margin-bottom: 50px;
+}
+
+.m-b-150 {
+  margin-bottom: 150px;
+}
+
+.m-l-5 {
+  margin-left: 5px;
+}
+
+.m-l-15 {
+  margin-left: 15px;
+}
+
+.m-l-30 {
+  margin-left: 30px;
+}
+
+.m-l-150 {
+  margin-left: 150px;
+}
+
+.m-l-280 {
+  margin-left: 280px;
+}
+
+.m-r-30 {
+  margin-right: 30px;
+}
+
+.p-l-40 {
+  padding-left: 40px;
+}
+
+.p-r-40 {
+  padding-right: 40px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.font-size-20 {
+  font-size: 20px;
+}
+
+.sign-up-button {
+  background: #8e7d4d;
+  border: 1px solid #8e7d4d;
+  color: #fff;
+  font-size: 11px;
+  padding: 16px 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.onsen-1 {
+  /* background-image: url("./images/landing-onsen.jpeg"); */
+  background-size: cover;
+  height: 650px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.input-form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.general-button {
+  background-color: #000;
+  border: none;
+}
+
+.scroll-down-text {
+  border-bottom: 2px solid  rgb(182, 176, 176);
+  color: rgb(182, 176, 176);
+  margin-left: 140px;
+  margin-right: 140px;
+  margin-bottom: 80px;
+}
+
+.item-center {
+  display: flex;
+  justify-content:center;
 }

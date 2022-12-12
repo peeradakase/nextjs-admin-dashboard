@@ -1,0 +1,24 @@
+.bgSb {
+background: rgb(235,235,235);
+background: linear-gradient(217deg, rgba(235,235,235,0.09429709383753504) 7%, rgba(215,206,206,1) 49%, rgba(249,249,249,1) 80%);
+}
+
+.head {
+  text-align: center;
+}
+
+.box {
+  width: 200px;
+  min-height: 100vh;
+  /* border: 1px solid rgb(86, 87, 87); */
+}
+
+.icons {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.boxParent {
+  display: flex;
+}

@@ -1,0 +1,14 @@
+.wrapperClass {
+  border: 1px solid rgb(203, 207, 207);
+  width: 780px;
+  background-color: #b6d4ca;
+}
+
+.editorClass {
+  background-color: #c8e0d8;
+  height: 400px;
+}
+
+.toolbarClass {
+  background-color: #c8e0d8;
+}

@@ -1,0 +1,20 @@
+.boxParent {
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  height: 100vh;
+}
+
+.boxLogin {
+  width: 50%;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px;
+  background-color: rgb(255, 255, 255);
+  /* height: 174px; */
+  /* margin: 150px; */
+  padding: 30px;
+  margin-left: 10px;
+  margin-right: 300px;
+
+}

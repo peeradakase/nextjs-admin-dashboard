@@ -1,5 +1,14 @@
-body {
+/* body {
   background-color: #8e7d4d;
+} */
+.background-image {
+  background-image: url("../public/images/bg1.jpeg");
+  background-size: cover;
+  height: 100vh;
+}
+
+.flex {
+  display: flex;
 }
 
 .m-t-20 {
@@ -58,6 +67,14 @@ body {
   margin-right: 30px;
 }
 
+.p-t-20{
+  padding-top: 20px;
+}
+
+.p-l-10 {
+  padding-left: 10px;
+}
+
 .p-l-40 {
   padding-left: 40px;
 }
@@ -80,7 +97,7 @@ img {
   color: #fff;
   font-size: 11px;
   padding: 16px 20px;
-    text-transform: uppercase;
+    text-transhtmlForm: uppercase;
     letter-spacing: 3px;
 }
 
@@ -94,7 +111,7 @@ img {
   text-align: center;
 }
 
-.input-form {
+.input-htmlForm {
   max-width: 800px;
   margin: 0 auto;
 }
@@ -115,4 +132,10 @@ img {
 .item-center {
   display: flex;
   justify-content:center;
+}
+
+.table-image {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
 }

@@ -13,7 +13,7 @@
     "draft-js": "^0.11.7",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",
-    "htmlFormik": "^2.2.9",
+    "formik": "^2.2.9",
     "next": "13.0.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",

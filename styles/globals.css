@@ -97,8 +97,8 @@ img {
   color: #fff;
   font-size: 11px;
   padding: 16px 20px;
-    text-transhtmlForm: uppercase;
-    letter-spacing: 3px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 .onsen-1 {
@@ -111,7 +111,7 @@ img {
   text-align: center;
 }
 
-.input-htmlForm {
+.input-form {
   max-width: 800px;
   margin: 0 auto;
 }

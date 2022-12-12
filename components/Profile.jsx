@@ -16,7 +16,7 @@ export default function Profile() {
       </div>
 
       {/* HTML Form with Built-in Validation  */}
-      <htmlForm action="/send-data-here" method="post">
+      <form action="/send-data-here" method="post">
 
         <label htmlFor="image">Choose image</label>
         <input type="file" id="image" name="image" required />
@@ -56,7 +56,7 @@ export default function Profile() {
           </div>
 
         <button type="submit">Submit</button>
-      </htmlForm>
+      </form>
     </div>
   )
 }

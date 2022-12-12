@@ -16,7 +16,7 @@ export default function AddForm() {
       </div>
 
       {/* HTML Form with Built-in Validation  */}
-      <htmlForm action="/send-data-here" method="post">
+      <form action="/send-data-here" method="post">
 
         <label htmlFor="image">Choose image</label>
         <input type="file" id="image" name="image" required />
@@ -50,7 +50,7 @@ export default function AddForm() {
 
 
         <button type="submit">Submit</button>
-      </htmlForm>
+      </form>
     </div>
   )
 }

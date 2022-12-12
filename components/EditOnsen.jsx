@@ -12,7 +12,7 @@ export default function EditOnsen() {
         className={`${styles.editOnsenImg}`}
         src={zaoOnsen}
         alt='zao-onsen' />
-      <htmlForm>
+      <form>
         Select image to upload:
         <input type="file" name="fileToUpload" id="fileToUpload" />
 
@@ -46,7 +46,7 @@ export default function EditOnsen() {
 
           <input type="submit" value="Submit" />
         </div>
-      </htmlForm>
+      </form>
     </div>
   )
 }

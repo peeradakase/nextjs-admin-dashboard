@@ -11,28 +11,28 @@ export default function LoginForm() {
         }>
           <h1 className="text-center m-b-30">Admin Login</h1>
 
-          <form className="input-htmlForm m-t-30 ">
-            <div className="htmlForm-floating mb-3">
+          <form className="input-form m-t-30 ">
+            <div className="form-floating mb-3">
               <input
                 type="email"
-                className="htmlForm-control"
+                className="form-control"
                 id="email-input"
                 name="email"
-                // value={htmlFormik.values.email}
+                // value={formik.values.email}
                 placeholder="Email"
-              // onChange={htmlFormik.handleChange}
+              // onChange={formik.handleChange}
               />
               <label htmlFor="email-input">Company Email Address</label>
             </div>
-            <div className="htmlForm-floating mb-3">
+            <div className="form-floating mb-3">
               <input
                 type="password"
-                className="htmlForm-control"
+                className="form-control"
                 id="password-input"
                 name="password"
-                // value={htmlFormik.values.password}
+                // value={formik.values.password}
                 placeholder="Password"
-              // onChange={htmlFormik.handleChange}
+              // onChange={formik.handleChange}
               />
               <label htmlFor="password-input">Password</label>
             </div>

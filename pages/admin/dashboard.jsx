@@ -1,7 +1,8 @@
 import React from 'react'
+import DashBoardCustomer from "../../components/DashBoardCustomer"
 
 export default function DashBoard() {
   return (
-    <div>DashBoard</div>
+    <div><DashBoardCustomer/></div>
   )
 }

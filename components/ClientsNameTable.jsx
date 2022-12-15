@@ -8,7 +8,7 @@ export default function ClientsNameTable() {
     <div>
       <h1>Clients</h1>
       <div>
-        <table class="table table-success table-striped">
+        <table className="table table-success table-striped">
           <thead>
             <tr>
               <th scope="col">ID</th>

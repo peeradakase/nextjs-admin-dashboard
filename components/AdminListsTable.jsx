@@ -6,7 +6,7 @@ export default function AdminListsTable() {
       <h1>Admin lists</h1>
       <button>Add New</button>
       <div>
-        <table class="table table-success table-striped">
+        <table className="table table-success table-striped">
           <thead>
             <tr>
               <th scope="col">ID</th>

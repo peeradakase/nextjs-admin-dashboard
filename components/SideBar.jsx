@@ -10,18 +10,25 @@ import logout from '../public/images/logout.png';
 import orders from '../public/images/orders.png';
 import profile from '../public/images/profile.png';
 import onsens from '../public/images/onsens.png';
-
-
+import menuLogo from '../public/images/menuLogo.png';
 
 export default function SideBar() {
   return (
     <div className={`${styles.box} ${styles.bgSb}`}>
 
       <div className={styles.head}>
-        <h5 className='p-t-20'>ONSEN</h5>
+
+        <Image
+          className={`${styles.logo} m-b-20`}
+          src={menuLogo}
+          alt="menuLogo" />
+        {/* <h6>Admin dashbord</h6> */}
       </div>
+
       <div className='p-l-10'>
         <div className={`${styles.main} m-b-50`} >
+          <h6>Admin dashbord</h6>
+
           <h6 className='m-t-20'>MAIN</h6>
           <div className={styles.boxParent}>
             <Image

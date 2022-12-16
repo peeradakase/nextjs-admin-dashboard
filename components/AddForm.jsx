@@ -6,7 +6,7 @@ import client1 from '../public/images/client1.jpeg';
 export default function AddForm() {
   return (
     <div>
-      <h3>Add Admin</h3>
+      <h3 className='b-b-1 m-b-40'>Add Admin</h3>
       <div className='flex'>
         {/* image */}
         <div>

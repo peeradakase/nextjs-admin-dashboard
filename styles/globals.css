@@ -7,8 +7,19 @@
   height: 100vh;
 }
 
+.choose-image {
+  font-size: 15px;
+}
+
+.width-100 {
+  width: 100%;
+}
+
 .flex {
   display: flex;
+}
+.float-right {
+  float: right;
 }
 
 .m-t-20 {
@@ -35,6 +46,10 @@
   margin-bottom: 20px;
 }
 
+.m-b-40 {
+  margin-bottom: 40px;
+}
+
 .m-b-60 {
   margin-bottom: 60px;
 }
@@ -59,6 +74,10 @@
   margin-left: 30px;
 }
 
+.m-l-60 {
+  margin-left: 60px;
+}
+
 .m-l-135 {
   margin-left: 135px;
 
@@ -74,6 +93,10 @@
 
 .m-r-10 {
   margin-right: 10px;
+}
+
+.m-r-15 {
+  margin-right: 15px;
 }
 
 .m-r-30 {

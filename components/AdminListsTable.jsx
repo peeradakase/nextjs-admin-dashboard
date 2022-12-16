@@ -4,7 +4,7 @@ export default function AdminListsTable() {
   return (
     <div>
       <h3>Admin lists</h3>
-      <button>Add New</button>
+      <button className='float-right m-b-10'>Add New</button>
       <div>
         <table className="table table-success table-striped">
           <thead>

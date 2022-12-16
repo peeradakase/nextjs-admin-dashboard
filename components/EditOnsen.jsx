@@ -7,7 +7,7 @@ import EditorComponent from "../components/Editor";
 export default function EditOnsen() {
   return (
     <div>
-      <h3>Edit Onsen</h3>
+      <h3 className='b-b-1'>Edit Onsen</h3>
       <Image
         className={`${styles.editOnsenImg}`}
         src={zaoOnsen}

@@ -6,7 +6,7 @@ import styles from "../components/ClientsNameTable.module.css";
 export default function ClientsNameTable() {
   return (
     <div>
-      <h1>Clients</h1>
+      <h3>Clients</h3>
       <div>
         <table className="table table-success table-striped">
           <thead>

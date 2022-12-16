@@ -18,7 +18,7 @@ export default function SideBar() {
     <div className={`${styles.box} ${styles.bgSb}`}>
 
       <div className={styles.head}>
-        <h4 className='p-t-20'>ONSEN</h4>
+        <h5 className='p-t-20'>ONSEN</h5>
       </div>
       <div className='p-l-10'>
         <div className={`${styles.main} m-b-50`} >

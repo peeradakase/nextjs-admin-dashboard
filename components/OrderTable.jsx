@@ -5,7 +5,7 @@ import Image from 'next/image'
 export default function OrderTable() {
   return (
     <div>
-      <h1>Orders</h1>
+      <h3>Orders</h3>
       <div>
         <table className="table table-success table-striped">
           <thead>

@@ -9,7 +9,7 @@ export default function LoginForm() {
       <div className={styles.boxParent}>
         <div className={styles.boxLogin
         }>
-          <h1 className="text-center m-b-30">Admin Login</h1>
+          <h3 className="text-center m-b-30">Admin Login</h3>
 
           <form className="input-form m-t-30 ">
             <div className="form-floating mb-3">

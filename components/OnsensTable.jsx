@@ -5,7 +5,7 @@ import osakaOnsen from '../public/images/osakaOnsen.jpeg'
 export default function OnsensTable() {
   return (
     <div>
-      <h1>Orders</h1>
+      <h3>Onsens</h3>
       <div>
         <table className="table table-success table-striped">
           <thead>
@@ -22,12 +22,16 @@ export default function OnsensTable() {
             <tr>
               <td>1</td>
               <td>
-                <Image
-                  className='table-image'
-                  src={osakaOnsen}
-                  alt='osaka-onsen'
+                <div className='flex'>
+                  <p className='m-r-30'>Osaka onsen</p>
+                  <Image
+                    className='onsens-table-image'
+                    src={osakaOnsen}
+                    alt='osaka-onsen'
                 />
-                <p>Osaka onsen</p>
+                </div>
+
+
               </td>
               <td>...</td>
               <td>...</td>

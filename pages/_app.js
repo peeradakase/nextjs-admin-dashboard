@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <div className="flex">
     <SideBar />
-      <div className='flex-grow-1'>
+      <div className='flex-grow-1 m-l-15'>
       <Component {...pageProps} />
     </div>
 

@@ -1,6 +1,17 @@
 .clientImage {
-  width: 300px;
-  height: 250px;
-  margin-top: 50px;
-  margin-left: 80px;
+  /* width: 357px;
+  height: 273px;
+  margin-top: 50px px; */
+  margin-left: 60px;
+
+}
+
+.boxForm {
+  margin-left: 100px;
+  margin-top: 31px;
+}
+
+.chooseImage {
+  padding-left: 80px;
+  font-size: 15px;
 }

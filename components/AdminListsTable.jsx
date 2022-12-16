@@ -3,7 +3,7 @@ import React from 'react'
 export default function AdminListsTable() {
   return (
     <div>
-      <h1>Admin lists</h1>
+      <h3>Admin lists</h3>
       <button>Add New</button>
       <div>
         <table className="table table-success table-striped">

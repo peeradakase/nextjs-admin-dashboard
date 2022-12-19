@@ -1,6 +1,7 @@
 import React from 'react'
 import akiko from '../public/images/akiko.webp'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function OrderTable() {
   return (
@@ -33,7 +34,7 @@ export default function OrderTable() {
               <td>monney-ns@gmail.com</td>
               <td>paid</td>
               <td>
-                <button>View</button>
+                <Link href="/admin/clients/1" className='m-b-10 m-r-10 viewLink'>View</Link>
                 <button>Delete</button>
               </td>
             </tr>

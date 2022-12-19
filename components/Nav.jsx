@@ -1,12 +1,12 @@
 import React from 'react'
 import Link from 'next/link';
-import styles from './Nav.module.css';
+// import styles from './Nav.module.css';
 
 const MenuLabel = (props) => {
   return <p>{props.text}</p>
 }
 
-export default function
+export default function Nav
 () {
   return (
     <div>

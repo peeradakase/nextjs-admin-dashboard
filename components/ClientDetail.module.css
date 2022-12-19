@@ -1,0 +1,27 @@
+.textBox {
+  min-width: 550px;
+}
+
+.space {
+  padding-left: 50px;
+  padding-top: 30px;
+}
+
+.imgSize {
+  border-radius: 50%;
+  width: 90px;
+  height: 70px
+
+}
+
+.text {
+  height: 29px;
+    padding-top: 32px;
+    padding-left: 19px;
+}
+
+.tableSize {
+  width: 1113px;
+  margin-left: 49px;
+  margin-top: 15px;
+}

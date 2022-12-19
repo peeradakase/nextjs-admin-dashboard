@@ -17,8 +17,8 @@ export default function EditOnsen() {
         Select image to upload:
         <input type="file" name="fileToUpload" id="fileToUpload" className='width-100 choose-image' />
 
-        <div className="mb-3 m-r-30">
-          <label htmlFor="nameInputName" className="form-label m-r-60 m-t-50 p-r-40">Onsen Name</label>
+        <div className="mb-3 m-r-30 width-40">
+            <label htmlFor="nameInputName" className="form-label m-r-60 m-t-50 p-r-40 ">Onsen Name</label>
           <input type="name" className="form-control" id="nameInputName" />
         </div>
 
@@ -51,9 +51,9 @@ export default function EditOnsen() {
             {/* <input className='m-t-50 m-b-60 '
           type="submit" value="Submit" /> */}
 
-            <div className="m-t-30 m-b-60 d-grid gap-2 col-6 mx-auto">
+            <div className="m-t-30 m-b-60 d-grid gap-2 col-6 mx-auto float-left">
               <button
-                className="general-button btn btn-primary mb-3 m-t-30"
+                className="general-button btn btn-primary mb-3 m-t-30  m-l-200"
                 type='submit'
                 value="Submit"
                 >Send</button>

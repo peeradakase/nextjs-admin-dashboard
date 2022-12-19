@@ -1,10 +1,13 @@
 import React from 'react'
+import Link from 'next/link'
 
 export default function AdminListsTable() {
   return (
     <div>
       <h3>Admin lists</h3>
-      <button className='float-right m-b-10'>Add New</button>
+      <Link href="/admin/my/team/Add" className='m-b-10 m-r-10 viewLink'>
+        <button className='float-right m-b-10 button-style '>Add New</button>
+      </Link>
       <div>
         <table className="table table-success table-striped">
           <thead>

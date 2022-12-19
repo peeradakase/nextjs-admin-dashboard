@@ -45,7 +45,9 @@ export default function Profile() {
           </div>
           <p>Row: Super Admin</p>
 
-          <button type="submit" className="btn btn-primary m-t-20 ">Submit</button>
+          {/* <button type="submit" className="btn btn-primary m-t-20 ">Submit</button> */}
+
+          <button type="submit" className={`${styles.buttonSize} btn btn-primary m-t-20  button-size bg-button`}>Submit</button>
 
         </form>
 

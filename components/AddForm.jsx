@@ -65,7 +65,15 @@ export default function AddForm() {
             </label>
           </div>
 
-          <button type="submit" className="btn btn-primary m-t-20 ">Submit</button>
+          <button type="submit" className={`${styles.buttonSize} btn btn-primary m-t-20  button-size bg-button`}>Submit</button>
+
+          {/* <div className="m-t-30 m-b-60 d-grid gap-2 col-6 mx-auto float-left">
+            <button
+              className="general-button btn btn-primary mb-3 m-t-30  m-l-200"
+              type='submit'
+              value="Submit"
+            >Submit</button>
+          </div> */}
 
         </form>
 

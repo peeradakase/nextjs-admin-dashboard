@@ -1,14 +1,32 @@
 /* body {
   background-color: #8e7d4d;
 } */
+
+.font-thick {
+  font-weight: bold;
+}
+
 .background-image {
   background-image: url("../public/images/bg1.jpeg");
   background-size: cover;
   height: 100vh;
 }
 
+.bg-button {
+  background-color: #000;
+  border: #000;
+}
+
+.float-left {
+  float: left;
+}
+
 .choose-image {
   font-size: 15px;
+}
+
+.width-40 {
+  width: 40%;
 }
 
 .width-100 {
@@ -18,6 +36,10 @@
 .flex {
   display: flex;
 }
+.float-left {
+  float: left;
+}
+
 .float-right {
   float: right;
 }
@@ -87,6 +109,14 @@
   margin-left: 150px;
 }
 
+.m-l-180 {
+  margin-left: 180px;
+}
+
+.m-l-200 {
+  margin-left: 200px;
+}
+
 .m-l-280 {
   margin-left: 280px;
 }
@@ -110,8 +140,16 @@
   margin-right: 100px;
 }
 
+.padding-20 {
+  padding: 20px;
+}
+
 .p-t-20{
   padding-top: 20px;
+}
+
+.padding-10 {
+  padding: 10px;
 }
 
 .p-l-10 {
@@ -122,6 +160,10 @@
   padding-left: 40px;
 }
 
+.p-l-20 {
+  padding-left: 20px;
+}
+
 .p-r-40 {
   padding-right: 40px;
 }
@@ -130,12 +172,28 @@
   padding-right: 80px;
 }
 
+.p-b-10 {
+  padding-bottom: 10px;
+}
+
+.height-96 {
+  height: 96px;
+}
+
+.width-180 {
+  width: 180px;
+}
+
 img {
   max-width: 100%;
 }
 
 .font-size-20 {
   font-size: 20px;
+}
+
+.b-t-1 {
+  border-top: 1px solid #d6d5d1;
 }
 
 .b-b-1 {
@@ -211,4 +269,42 @@ img {
 
 .bold-letter {
   font-weight: bold;
+}
+
+.link-style {
+  color: rgb(48, 46, 46);
+  text-decoration: none;
+}
+
+.link-style:hover {
+  color: rgb(225, 225, 227);
+  background-color: rgb(64, 63, 63);
+  /* text-decoration: underline; */
+  width: 100%;
+}
+
+.bg {
+  background: rgb(255,255,255);
+background: linear-gradient(124deg, rgba(255,255,255,0) 0%, rgba(175,161,161,0.6629245448179272) 58%, rgba(223,223,223,0.7805716036414566) 95%);
+  height: 1024px;
+}
+
+.viewLink:hover {
+  color: rgb(29, 29, 33);
+  background-color: rgb(212, 205, 205);
+  width: 100%;
+  text-decoration: none;
+}
+
+.client-small-img {
+  width: 70px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.button-style {
+  border-radius: 15%;
+  background-color: black;
+  color: #f6f5f2;
+  border: 2px solid rgb(120, 112, 112);
 }

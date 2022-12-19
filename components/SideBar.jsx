@@ -11,6 +11,8 @@ import orders from '../public/images/orders.png';
 import profile from '../public/images/profile.png';
 import onsens from '../public/images/onsens.png';
 import menuLogo from '../public/images/menuLogo.png';
+import Link from 'next/link';
+
 
 export default function SideBar() {
   return (
@@ -35,7 +37,7 @@ export default function SideBar() {
               className={styles.icons}
               src={home}
               alt="dashboard" />
-            <div>Dashboard</div>
+            <Link href="/admin/dashboard" className='m-b-10 link-style'>Dashboard</Link>
           </div>
         </div>
 
@@ -46,21 +48,21 @@ export default function SideBar() {
               className={styles.icons}
               src={users}
               alt="users" />
-            <div className='m-b-10'>Users</div>
+            <Link href="/admin/clients/" className='m-b-10 link-style'>Users</Link>
           </div>
           <div className={styles.boxParent}>
             <Image
               className={styles.icons}
               src={onsens}
               alt="onsens" />
-            <div className='m-b-10'>Onsens</div>
+            <Link href="/admin/onsens/" className='m-b-10 link-style'>Onsens</Link>
           </div>
           <div className={styles.boxParent}>
             <Image
               className={styles.icons}
               src={orders}
               alt="orders" />
-            <div>Orders</div>
+            <Link href="/admin/orders/" className='m-b-10 link-style'>Orders</Link>
           </div>
         </div>
 
@@ -71,7 +73,7 @@ export default function SideBar() {
               className={styles.icons}
               src={profile}
               alt="profile" />
-            <div className='m-b-10'>Profile</div>
+            <Link href="/admin/my/profile/" className='m-b-10 link-style'>Profile</Link>
           </div>
           <div className={styles.boxParent}>
             <Image
@@ -90,7 +92,7 @@ export default function SideBar() {
               src={manageTeam}
               alt="manageTeam"
             />
-            <div className='m-b-10'>Manage Team</div>
+            <Link href="/admin/my/team/" className='m-b-10 link-style'>Admin Lists</Link>
           </div>
           <div className={styles.boxParent}>
             <Image
@@ -98,7 +100,7 @@ export default function SideBar() {
               src={addAdmin}
               alt="addAdmin"
             />
-            <div>Add Admin</div>
+            <Link href="/admin/my/team/Add" className='m-b-10 link-style'>Add Admin</Link>
           </div>
         </div>
 

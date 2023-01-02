@@ -24,7 +24,7 @@ export default function Profile() {
             <div>
               <div className="mb-3 m-r-30">
                 <label htmlFor="nameInputName" className="form-label m-r-60 p-r-40">Name</label>
-                <input type="name" className="form-control" id="nameInputName" />
+                <input type="text" className="form-control" id="nameInputName" />
               </div>
 
               <div className="mb-3 m-r-30">

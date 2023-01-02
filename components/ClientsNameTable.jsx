@@ -7,7 +7,6 @@ import Pagination from '../components/Pagination';
 
 export default function ClientsNameTable(props) {
   const { clients, pagination, onPageChange, onClientDelete } = props;
-  console.log(clients, ':clients');
 
   const pageCount = pagination ? Math.ceil(pagination.total /pagination.limit) : 0;
 
@@ -33,7 +32,6 @@ export default function ClientsNameTable(props) {
 
           <tbody>
             {clients && clients.map(clientsData => {
-              console.log(clientsData, ':clientsData')
               return (
                 <tr key={clientsData.id}>
                   <td>{clientsData.id}</td>

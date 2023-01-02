@@ -1,10 +1,10 @@
-import react from 'react';
-import React from 'react'
-import OnsensTable from '../../../components/OnsensTable';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import axios from 'axios';
-import { apiUrl, requestHeader } from '../../../data/constant'
+import react from "react";
+import React from "react";
+import OnsensTable from "../../../components/OnsensTable";
+import { useEffect } from "react";
+import { useState } from "react";
+import axios from "axios";
+import { apiUrl, requestHeader } from "../../../data/constant";
 
 export default function OnsensTablePage() {
   const [onsenItems, setOnsenItems] = useState();
@@ -13,39 +13,42 @@ export default function OnsensTablePage() {
 
   const getOnsenData = async (page) => {
     try {
-      const { data: { data, pagination } } = await axios.get(`${apiUrl}/api/admin/onsens?page=${page}`, requestHeader)
+      const {
+        data: { data, pagination },
+      } = await axios.get(
+        `${apiUrl}/api/admin/onsens?page=${page}`,
+        requestHeader
+      );
       setOnsenItems(data);
-      console.log(data)
       setPaginationDate(pagination);
     } catch (error) {
-      console.log(error)
     }
-  }
+  };
 
   const onPageChange = async (pageNumber) => {
     await getOnsenData(pageNumber);
-    setCurrentPage(pageNumber)
-  }
+    setCurrentPage(pageNumber);
+  };
 
   const onDeleteItem = async (id) => {
     //send Delete req to Backend Server
-    if (window.confirm('Confirm to delete this row') === true) {
+    if (window.confirm("Confirm to delete this row") === true) {
       //if yes
       //send Delete req to Backend Server
       try {
-        await axios.delete(`${apiUrl}/api/admin/onsens/${id}`)
-        alert ('Seccess Delete Onsens')
+        await axios.delete(`${apiUrl}/api/admin/onsens/${id}`);
+        alert("Seccess Delete Onsens");
         getOnsenData(currentPage);
       } catch (error) {
-        alert('Delete Onsens Error');
+        alert("Delete Onsens Error");
       }
     }
-  }
+  };
 
   useEffect(() => {
     //call Ajax
     getOnsenData(currentPage);
-  },[])
+  }, []);
   return (
     <div>
       <OnsensTable
@@ -55,5 +58,5 @@ export default function OnsensTablePage() {
         onOnsenDelete={onDeleteItem}
       />
     </div>
-  )
+  );
 }

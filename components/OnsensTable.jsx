@@ -8,7 +8,6 @@ import { apiUrl } from '../data/constant.js';
 
 export default function OnsensTable(props) {
   const { onsen, pagination, onPageChange, onOnsenDelete } = props;
-  console.log(onsen, ':onsen')
 
   const pageCount = pagination ? Math.ceil(pagination.total / pagination.limit) : 0;
 
@@ -20,6 +19,9 @@ export default function OnsensTable(props) {
   return (
     <div>
       <h3>Onsens</h3>
+      <Link href="/admin/onsens/create" className='m-b-10 m-r-10 viewLink'>
+        <button className='float-right m-b-10 button-style '>Add New</button>
+      </Link>
       <div>
         <table className="table table-success table-striped">
           <thead>
@@ -37,15 +39,20 @@ export default function OnsensTable(props) {
 
           <tbody>
             {onsen && onsen.map(onsenItems => {
-              console.log(onsenItems, ':onsenItems')
               return (
                 <tr key={onsenItems.id}>
                   <td><img className='client-small-img' src={`${apiUrl}/${onsenItems.images[0].url}`} alt="" /></td>
                   <td>{onsenItems.id}</td>
                   <td>{onsenItems.name}</td>
-                  <td>{onsenItems.price}</td>
-                  <td>{onsenItems.about}</td>
-                  <td>{onsenItems.policy}</td>
+                  <td>
+                    <div dangerouslySetInnerHTML={{ __html: onsenItems.price }}/>
+                  </td>
+                  <td>
+                    <div dangerouslySetInnerHTML={{ __html: onsenItems.about }} />
+                  </td>
+                  <td>
+                    <div dangerouslySetInnerHTML={{ __html: onsenItems.policy }} />
+                  </td>
                   {/* <td>{onsenItems.action}</td> */}
                   <td>
                     <Link href="/admin/onsens/edit" className='m-b-10 m-r-10 viewLink'>View</Link>

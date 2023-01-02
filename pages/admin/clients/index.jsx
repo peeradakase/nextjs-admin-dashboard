@@ -12,12 +12,11 @@ export default function ClientsPage() {
 
   const getClientData = async (page) => {
     try {
-      console.log(requestHeader, 'requestHeader')
       const { data: { data, pagination } } = await axios.get(`${apiUrl}/api/admin/clients?page=${page}`, requestHeader)
       setClientsData(data)
       setPaginationDate(pagination)
     } catch (error) {
-      console.log(error)
+
     }
   }
 

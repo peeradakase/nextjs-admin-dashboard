@@ -12,13 +12,10 @@ export default function AdminLists() {
 
   const getTeamData = async (page) => {
     try {
-      console.log(requestHeader, 'requestHeader')
       const { data: { data, pagination } } = await axios.get(`${apiUrl}/api/admin/teams?page=${page}`, requestHeader)
       setAdmins(data);
-      console.log(data, "Mo")
       setPaginationDate(pagination);
     } catch (error) {
-      console.log(error);
     }
   }
 
@@ -38,7 +35,6 @@ export default function AdminLists() {
         getTeamData(currentPage)
       } catch (error) {
         alert('Delete Team Error')
-        console.log(error, ':error')
       }
     }
   }

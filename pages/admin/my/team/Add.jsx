@@ -10,12 +10,11 @@ export default function Add() {
   const onCreateAdminRequest = async (adminData, setErrors) => {
     try {
       const { data } = await axios.post(`${apiUrl}/api/admin/teams`, adminData, requestHeaderFormData);
-      console.log(data, ':data')
       alert('Success Created Admin');
       router.push('/admin/my/team')
     } catch (error) {
+      console.log(error ,':error')
       alert('Failed to Create new admin');
-      console.log(error);
       setErrors(error.response?.data);
     }
   }

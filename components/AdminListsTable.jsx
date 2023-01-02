@@ -6,7 +6,6 @@ import { apiUrl } from '../data/constant.js';
 
 export default function AdminListsTable(props) {
   const { team, pagination, onPageChange, onTeamDelete } = props;
-  console.log(team, ':teams');
 
   const pageCount = pagination ? Math.ceil(pagination.total / pagination.limit) : 0;
 

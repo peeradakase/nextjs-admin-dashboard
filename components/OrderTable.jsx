@@ -12,7 +12,8 @@ export default function OrderTable() {
           <thead>
             <tr>
               <th scope="col">ID</th>
-              <th scope="col">Client name</th>
+              <th scope="col">Client Picture</th>
+              <th scope="col">Client Name</th>
               <th scope="col">Phone Number</th>
               <th scope="col">Email</th>
               <th scope="col">Status</th>
@@ -24,18 +25,17 @@ export default function OrderTable() {
               <td>1</td>
               <td>
                 <Image
-                  className='table-image'
+                  className='client-small-img '
                   src={akiko}
                   alt='akiko'
                 />
-                <p>Akiko</p>
               </td>
+              <td>Akiko</td>
               <td>2333-4233</td>
               <td>monney-ns@gmail.com</td>
               <td>paid</td>
               <td>
                 <Link href="/admin/clients/1" className='m-b-10 m-r-10 viewLink'>View</Link>
-                <button>Delete</button>
               </td>
             </tr>
           </tbody>

@@ -1,7 +1,20 @@
 import React from 'react'
 import Link from 'next/link'
+import Pagination from '../components/Pagination'
+import { apiUrl } from '../data/constant.js';
 
-export default function AdminListsTable() {
+
+export default function AdminListsTable(props) {
+  const { team, pagination, onPageChange, onTeamDelete } = props;
+  console.log(team, ':teams');
+
+  const pageCount = pagination ? Math.ceil(pagination.total / pagination.limit) : 0;
+
+  const handlePageClick = (event) => {
+    const currentPage = event.selected + 1;
+    onPageChange(currentPage)
+  }
+
   return (
     <div>
       <h3>Admin lists</h3>
@@ -12,27 +25,48 @@ export default function AdminListsTable() {
         <table className="table table-success table-striped">
           <thead>
             <tr>
+              <th scope="col">Picture</th>
               <th scope="col">ID</th>
               <th scope="col">Admin Name</th>
               <th scope="col">Phone Number</th>
               <th scope="col">Email</th>
               <th scope="col">Role</th>
               <th scope="col"></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>2333-4233</td>
-              <td>monney-ns@gmail.com</td>
-              <td>admin</td>
-              <td><button>Delete</button></td>
-            </tr>
+            {team && team.map(admin => {
+              return (
+                <tr key={admin.id}>
+                  <td><img className='client-small-img' src={`${apiUrl}/${admin.avatar}`} alt="admin-img" /></td>
+                  <td>{admin.id}</td>
+                  <td>{admin.name}</td>
+                  <td>{admin.phoneNumber}</td>
+                  <td>{admin.email}</td>
+                  <td>{admin.role}</td>
+                  <td>
+                    <button
+                      className='btn btn-danger'
+                      onClick={() => {
+                        onTeamDelete(admin.id)
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              )
+            })}
+
           </tbody>
 
-
         </table>
+
+        <Pagination
+          onPageChange={handlePageClick}
+          pageCount={pageCount}
+        />
       </div>
     </div>
   )

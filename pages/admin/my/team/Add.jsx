@@ -4,8 +4,13 @@ import AddForm from '../../../../components/AddForm';
 import axios from 'axios';
 import { apiUrl, requestHeaderFormData } from '../../../../data/constant';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 export default function Add() {
+  // let { id } = useParams();
+  const [isFormLoading, setIsFormLoading] = useState(false)
+  // const [admin, setAdmin] = useState(null);
   const router = useRouter()
   const onCreateAdminRequest = async (adminData, setErrors) => {
     try {
@@ -38,7 +43,12 @@ export default function Add() {
 
   return (
     <div>
-      <AddForm onFormSubmit={onCreateAdminFormSubmit}/>
+      <h3 className="b-b-1 m-b-40">Add Admin</h3>
+      <AddForm
+        mode='create'
+        onFormSubmit={onCreateAdminFormSubmit}
+        isLoading={isFormLoading}
+      />
     </div>
   )
 }

@@ -3,9 +3,13 @@ import Image from "next/image";
 import styles from "../components/AddForm.module.css";
 import client1 from "../public/images/client1.jpeg";
 import { useFormik } from "formik";
+import { useState } from "react";
+import { useEffect } from 'react';
+import { apiUrl } from '../data/constant.js'
 
 export default function AddForm(props) {
-  const { onFormSubmit } = props;
+  const { onFormSubmit, isLoading, mode, formValue } = props;
+  const [avatarUrl, setAvatarUrl] = useState(null);
 
   const formik = useFormik({
     initialValues: {
@@ -19,8 +23,10 @@ export default function AddForm(props) {
     validate: (value) => {
       const errors = {};
 
-      if (value.password.length < 4) {
-        errors.password = true;
+      if (mode ==='create') {
+        if (value.password.length < 4) {
+          errors.password = true;
+        }
       }
 
       return errors;
@@ -31,13 +37,58 @@ export default function AddForm(props) {
     validateOnChange: false,
   });
 
+  const previewImage = (file) => {
+    if (file) {
+      setAvatarUrl(URL.createObjectURL(file));
+    }
+  }
+
   const onAvatarInputChange = (event) => {
-    formik.setFieldValue("avatar", event.currentTarget.files[0]);
+    const file = event.currentTarget.files[0];
+    formik.setFieldValue("avatar",file);
+    previewImage(file)
   };
+
+  const updateFormValue = (value) => {
+    if (!value) {
+      return;
+    }
+
+    const { avatar, name, email, phoneNumber, password, role } = value;
+
+    if (avatar) {
+      const imageUrl = `${apiUrl}/${avatar}`;
+      setAvatarUrl(imageUrl);
+    }
+
+    if (name) {
+      formik.setFieldValue("name",name);
+    }
+
+    if (phoneNumber) {
+      formik.setFieldValue("phoneNumber", phoneNumber);
+    }
+
+    if (email) {
+      formik.setFieldValue("email", email);
+    }
+
+    if (password) {
+      formik.setFieldValue("password", password);
+    }
+
+    if (role) {
+      formik.setFieldValue("role", role);
+    }
+
+  }
+
+  useEffect(() => {
+    updateFormValue(formValue);
+  },[formValue])
 
   return (
     <div>
-      <h3 className="b-b-1 m-b-40">Add Admin</h3>
       <div className="flex">
         {/* image
         <div>
@@ -130,6 +181,7 @@ export default function AddForm(props) {
               </div>
             </div>
           </div>
+
           {/* img */}
           <div className="mb-3">
             <label
@@ -142,11 +194,15 @@ export default function AddForm(props) {
               type="file"
               className="form-control"
               id="imageInputImage"
-              value={formik.values.avatar}
-              name="image"
+              // value={formik.values.avatar}
+              // name="image"
               onChange={onAvatarInputChange}
-              required
+
             />
+
+            {avatarUrl && (
+              <img src={avatarUrl} alt="avatar" className={`${styles.clientImage} m-b-10`} />
+            )}
           </div>
 
           <div className="form-check">
@@ -178,12 +234,17 @@ export default function AddForm(props) {
             </label>
           </div>
 
-          <button
-            type="submit"
-            className={`${styles.buttonSize} btn btn-primary m-t-20  button-size bg-button`}
-          >
-            Submit
-          </button>
+          <div>
+            {isLoading ? (
+              'Loading'
+              ) : (
+                <button
+                  type="submit"
+                  className={`${styles.buttonSize} btn btn-primary m-t-20  button-size bg-button`}
+                >Submit
+                </button>
+              )}
+          </div>
         </form>
       </div>
 

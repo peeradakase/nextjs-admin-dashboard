@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 // import osakaOnsen from '../public/images/osakaOnsen.jpeg'
 import Link from 'next/link';
 import Pagination from '../components/Pagination'
@@ -55,7 +54,7 @@ export default function OnsensTable(props) {
                   </td>
                   {/* <td>{onsenItems.action}</td> */}
                   <td>
-                    <Link href="/admin/onsens/edit" className='m-b-10 m-r-10 viewLink'>View</Link>
+                    <Link href="/admin/onsens/create" className='m-b-10 m-r-10 viewLink'>View</Link>
                     <button
                       className='btn btn-danger'
                       onClick={() => {

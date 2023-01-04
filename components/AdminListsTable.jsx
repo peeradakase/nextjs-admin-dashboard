@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Pagination from '../components/Pagination'
 import { apiUrl } from '../data/constant.js';
+import Image from 'next/image';
 
 
 export default function AdminListsTable(props) {
@@ -30,7 +31,7 @@ export default function AdminListsTable(props) {
               <th scope="col">Phone Number</th>
               <th scope="col">Email</th>
               <th scope="col">Role</th>
-              <th scope="col"></th>
+              <th scope="col">Action</th>
               <th></th>
             </tr>
           </thead>
@@ -38,13 +39,17 @@ export default function AdminListsTable(props) {
             {team && team.map(admin => {
               return (
                 <tr key={admin.id}>
-                  <td><img className='client-small-img' src={`${apiUrl}/${admin.avatar}`} alt="admin-img" /></td>
+                  <td>
+                    <img className='client-small-img' src={`${apiUrl}/${admin.avatar}`} alt="admin-img" />
+                  </td>
+
                   <td>{admin.id}</td>
                   <td>{admin.name}</td>
                   <td>{admin.phoneNumber}</td>
                   <td>{admin.email}</td>
                   <td>{admin.role}</td>
                   <td>
+                    <Link href={`/admin/my/team/update/${admin.id}`} className='m-b-10 m-r-10 viewLink'>Edit</Link>
                     <button
                       className='btn btn-danger'
                       onClick={() => {

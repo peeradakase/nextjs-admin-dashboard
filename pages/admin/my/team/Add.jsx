@@ -43,7 +43,7 @@ export default function Add() {
 
   return (
     <div>
-      <h3 className="b-b-1 m-b-40">Add Admin</h3>
+      <h3 className="b-b-1 m-b-40">Add new admin</h3>
       <AddForm
         mode='create'
         onFormSubmit={onCreateAdminFormSubmit}

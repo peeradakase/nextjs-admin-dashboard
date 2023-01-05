@@ -26,11 +26,23 @@ const prepareDraft = (value) => {
   return editorState;
 };
 
+const getOnsenValue = (value) => {
+  console.log(value, ' :value');
+  return value ? prepareDraft(value) : EditorState.createEmpty()
+}
+
 export default function EditorComponent(props) {
   const { editOnsen, onChange } = props;
+  const [editorValue, setEditorValue] = useState('');
   const [editorState, setEditorState] = useState(
-    editOnsen ? prepareDraft(editOnsen) : EditorState.createEmpty()
+    getOnsenValue(editOnsen)
   );
+
+  useEffect(() => {
+    if (editorValue !== editOnsen) {
+      setEditorState(getOnsenValue(editOnsen))
+    }
+  }, [editOnsen])
 
   return (
     <Editor
@@ -44,6 +56,7 @@ export default function EditorComponent(props) {
         );
         onChange(forFormik);
         setEditorState(editorState);
+        setEditorValue(forFormik);
       }}
     />
   );

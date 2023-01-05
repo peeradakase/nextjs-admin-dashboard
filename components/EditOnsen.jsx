@@ -4,9 +4,13 @@ import zaoOnsen from "../public/images/zaoOnsen.jpeg";
 import styles from "../components/EditOnsen.module.css";
 import EditorComponent from "../components/Editor";
 import { useFormik } from "formik";
+import { useState } from "react";
+import { useEffect } from 'react';
+import { apiUrl } from '../data/constant.js'
 
 export default function EditOnsen(props) {
-  const { onFormSubmit } = props;
+  const { onFormSubmit, isLoading, mode, formValue } = props;
+  const [imageUrl, setImageUrl] = useState(null);
 
   const formik = useFormik({
     initialValues: {
@@ -23,6 +27,22 @@ export default function EditOnsen(props) {
     validateOnChange: false,
   });
 
+  const previewImage = (file) => {
+    if (file) {
+      setImageUrl(URL.createObjectURL(file));
+    }
+  }
+
+  const onImageInputChange = (event) => {
+    const file = event.currentTarget.files[0];
+    formik.setFieldValue("image", file);
+    previewImage(file)
+  };
+
+  // const onImageInputChange = (event) => {
+  //   formik.setFieldValue('image', event.currentTarget.files[0]);
+  // }
+
   const onAboutChange = (value) => {
     formik.setFieldValue("about", value);
   };
@@ -35,13 +55,48 @@ export default function EditOnsen(props) {
     formik.setFieldValue("policy", value);
   };
 
-  const onImageInputChange = (event) => {
-    formik.setFieldValue('image', event.currentTarget.files[0]);
+  const updateFormValue = (value) => {
+    if (!value) {
+      return;
+    }
+
+    const { images, name, deposit, about, price, policy } = value;
+
+    if (images) {
+      const imageUrl = `${apiUrl}/${images[0].url}`;
+      setImageUrl(imageUrl);
+    }
+
+    if (name) {
+      formik.setFieldValue("name", name);
+    }
+
+    if (deposit) {
+      formik.setFieldValue("deposit", deposit);
+    }
+
+    if (about) {
+      formik.setFieldValue("about", about);
+    }
+
+    if (price) {
+      onPriceChange(price)
+    }
+
+    if (policy) {
+      onPoliciesChange(policy);
+    }
+
   }
+
+  useEffect(() => {
+    console.log(formValue, 'formValue')
+    updateFormValue(formValue);
+  }, [formValue])
 
   return (
     <div>
-      <h3 className="b-b-1 m-b-40">Edit Onsen</h3>
+      {/* <h3 className="b-b-1 m-b-40">Edit Onsen</h3> */}
       <div className="m-l-60">
 
         {/* <Image
@@ -73,6 +128,10 @@ export default function EditOnsen(props) {
               id="depositInputDeposit"
               onChange={onImageInputChange}
             />
+
+            {imageUrl && (
+              <img src={imageUrl} alt="image" className={`${styles.clientImage} m-b-10`} />
+            )}
           </div>
 
           {/* Onsen Name */}
@@ -154,13 +213,17 @@ export default function EditOnsen(props) {
           type="submit" value="Submit" /> */}
 
             <div className="m-t-30 m-b-60 d-grid gap-2 col-6 mx-auto float-left">
-              <button
-                className="general-button btn btn-primary mb-3 m-t-30  m-l-200"
-                type="submit"
-                value="Submit"
-              >
-                Send
-              </button>
+              {isLoading ? (
+                'Loading'
+              ) : (
+                <button
+                  className="general-button btn btn-primary mb-3 m-t-30  m-l-200"
+                  type="submit"
+                  value="Submit"
+                >
+                  Send
+                </button>
+              )}
             </div>
           </div>
         </form>

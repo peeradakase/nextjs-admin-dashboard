@@ -17,7 +17,7 @@ export default function ClientsNameTable(props) {
 
   return (
     <div>
-      <h3>Clients</h3>
+      <h3>Users</h3>
       <div>
         <table className='table table-success table-striped'>
           <thead>

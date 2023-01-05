@@ -1,10 +1,12 @@
 import React from 'react'
 import EditOnsen from '../../../components/EditOnsen'
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import axios from 'axios';
 import { apiUrl, requestHeaderFormData } from '../../../data/constant.js';
 
 export default function CreateOnsenPage() {
+  const [isFormLoading, setIsFormLoading] = useState(false)
   const router = useRouter()
   const onCreateOnsenRequest = async (onsenData, setErrors) => {
     try {
@@ -35,6 +37,13 @@ export default function CreateOnsenPage() {
     await onCreateOnsenRequest(formData, setErrors);
   }
   return (
-    <div><EditOnsen onFormSubmit={onCreateOnsens}/></div>
+    <div>
+      <h3 className="b-b-1 m-b-40">Add new onsen</h3>
+      <EditOnsen
+        mode='create'
+        onFormSubmit={onCreateOnsens}
+        isLoading={isFormLoading}
+      />
+    </div>
   )
 }

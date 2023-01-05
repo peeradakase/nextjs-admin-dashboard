@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Pagination from '../components/Pagination'
 import { apiUrl } from '../data/constant.js';
 
-
 export default function OnsensTable(props) {
   const { onsen, pagination, onPageChange, onOnsenDelete } = props;
 
@@ -27,7 +26,7 @@ export default function OnsensTable(props) {
             <tr>
               <th scope="col">Onsen image</th>
               <th scope="col">ID</th>
-              <th scope="col">Onsen name</th>
+              <th className='width-120' scope="col">Onsen name</th>
               <th scope="col">Price(HKD)</th>
               <th scope="col">About</th>
               <th scope="col">Policies</th>
@@ -40,7 +39,7 @@ export default function OnsensTable(props) {
             {onsen && onsen.map(onsenItems => {
               return (
                 <tr key={onsenItems.id}>
-                  <td><img className='client-small-img' src={`${apiUrl}/${onsenItems.images[0].url}`} alt="" /></td>
+                  <td><img className='onsen-avatar' src={`${apiUrl}/${onsenItems.images[onsenItems.images.length-1].url}`} alt="" /></td>
                   <td>{onsenItems.id}</td>
                   <td>{onsenItems.name}</td>
                   <td>
@@ -54,7 +53,7 @@ export default function OnsensTable(props) {
                   </td>
                   {/* <td>{onsenItems.action}</td> */}
                   <td>
-                    <Link href="/admin/onsens/create" className='m-b-10 m-r-10 viewLink'>View</Link>
+                    <Link href={`/admin/onsens/update/${onsenItems.id}`} className='m-b-10 m-r-10 viewLink'>Edit</Link>
                     <button
                       className='btn btn-danger'
                       onClick={() => {

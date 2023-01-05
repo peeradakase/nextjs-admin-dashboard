@@ -17,6 +17,7 @@ export default function ClientDetailTable() {
               <th scope="col">total</th>
             </tr>
           </thead>
+
           <tbody>
             <tr>
               <td>Osashiwa Onsen</td>

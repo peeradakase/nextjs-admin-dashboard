@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router'
 import axios from 'axios';
-import { apiUrl, requestHeaderFormData } from '../../../../../data/constant.js';
+import { apiUrl, requestHeaderFormData, requestHeader } from '../../../../../data/constant.js';
 
 export default function UpdateAdmin() {
   const router = useRouter();
@@ -39,10 +39,10 @@ export default function UpdateAdmin() {
       alert('Success Update Admin');
     } catch (error) {
         alert('Failed to Update Admin')
-        if (error.response.data) {
+        if (error.response?.data) {
           setErrors(error.response?.data);
         }
-        console.log(error.response);
+      console.log(error, ':error')
     } finally {
       setIsFormLoading(false);
     }

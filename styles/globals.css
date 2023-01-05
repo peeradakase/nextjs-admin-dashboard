@@ -308,3 +308,10 @@ background: linear-gradient(124deg, rgba(255,255,255,0) 0%, rgba(175,161,161,0.6
   color: #f6f5f2;
   border: 2px solid rgb(120, 112, 112);
 }
+
+.onsen-avatar {
+  min-width: 100px;
+}
+.width-120 {
+  width: 120px;
+}

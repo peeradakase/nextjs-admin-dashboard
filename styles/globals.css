@@ -44,6 +44,10 @@
   float: right;
 }
 
+.m-t-15 {
+  margin-top: 15px;
+}
+
 .m-t-20 {
   margin-top: 20px;
 }
@@ -312,6 +316,16 @@ background: linear-gradient(124deg, rgba(255,255,255,0) 0%, rgba(175,161,161,0.6
 .onsen-avatar {
   min-width: 100px;
 }
+
+.width-240 {
+  width: 240px;
+}
+
 .width-120 {
   width: 120px;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
 }

@@ -2,8 +2,29 @@ import React from 'react'
 import Image from 'next/image'
 import styles from './LogInForm.module.css'
 import logo from '../public/images/logo.png'
+import { useFormik } from "formik";
 
-export default function LoginForm() {
+export default function LoginForm(props) {
+  const { onFormSubmit } = props;
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validate: (value) => {
+      const errors = {};
+
+      if (value.password.length < 4) {
+        errors.password = true;
+      }
+      return errors;
+    },
+    onSubmit: (values, { setErrors }) => {
+      onFormSubmit(values, setErrors);
+    },
+    validateOnChange: false,
+  })
+
   return (
     <div className='background-image'>
       <div className={styles.boxParent}>
@@ -11,16 +32,16 @@ export default function LoginForm() {
         }>
           <h3 className="text-center m-b-30">Admin Login</h3>
 
-          <form className="input-form m-t-30 ">
+          <form onSubmit={formik.handleSubmit}  className="input-form m-t-30 ">
             <div className="form-floating mb-3">
               <input
                 type="email"
                 className="form-control"
                 id="email-input"
                 name="email"
-                // value={formik.values.email}
+                value={formik.values.email}
                 placeholder="Email"
-              // onChange={formik.handleChange}
+                onChange={formik.handleChange}
               />
               <label htmlFor="email-input">Company Email Address</label>
             </div>
@@ -30,9 +51,9 @@ export default function LoginForm() {
                 className="form-control"
                 id="password-input"
                 name="password"
-                // value={formik.values.password}
+                value={formik.values.password}
                 placeholder="Password"
-              // onChange={formik.handleChange}
+                onChange={formik.handleChange}
               />
               <label htmlFor="password-input">Password</label>
             </div>

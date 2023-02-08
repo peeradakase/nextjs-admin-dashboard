@@ -5,25 +5,27 @@ import styles from "../components/DashBoardCustomer.module.css";
 import Image from 'next/image'
 import human from '../public/images/human.png';
 
-export default function DashBoardCustomer() {
-  return (
-    <div>
-      <div className={`${styles.boxCustomer} padding-10 m-b-10`}>
-        <div className='flex '>
-          <p className='m-r-30 font-thick ' >CUSTOMERS</p>
-          <p >^30%</p>
-        </div>
-        <h6>100</h6>
+export default function DashBoardCustomer(props) {
+  const { number, persent, title, img, link } = props;
 
-        <div className='flex'>
+  return (
+    <div className='m-r-30'>
+      <div className={`${styles.boxCustomer} padding-10 m-b-10`}>
+        <div className='flex space-between'>
+          <p className='m-r-30 font-thick'>{title}</p>
+          <p >^ {number}%</p>
+        </div>
+        <h6>{persent}</h6>
+
+        <div className='space-between'>
           <Link className='m-r-60'
-            href="/admin/clients/index">
+            href={link}>
             See details
           </Link>
           <div>
             <Image
               className={styles.dashBoardImage}
-              src={human}
+              src={img}
               alt="human" />
           </div>
         </div>
